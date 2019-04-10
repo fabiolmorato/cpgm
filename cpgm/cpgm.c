@@ -58,7 +58,7 @@ void cpgm_write_file (cpgm_t* cpgm, char* file)
     FILE* fp = fopen(file, "w");
     if (fp == NULL) return;
 
-    fprintf(fp, "CPGM\n%u %u %u %u %u\n", cpgm->dim_x, cpgm->dim_y, cpgm->max_value, cpgm->);
+    fprintf(fp, "CPGM\n%u %u %u %u %u\n", cpgm->dim_x, cpgm->dim_y, cpgm->max_value, cpgm->horizontal_split, cpgm->vertical_split);
 
     for (unsigned i = 0; i < cpgm->dim_y; i++) fprintf(fp, " %u", cpgm->line_average[i]);
     fprintf(fp, "\n");
